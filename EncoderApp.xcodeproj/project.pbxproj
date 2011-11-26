@@ -35,19 +35,19 @@
 		DA96771614809700009AD747 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DA96771714809700009AD747 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DA96771814809700009AD747 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DA96771B14809700009AD747 /* EncoderApp-Info.plist */ = {isa = PBXFileReference; path = "EncoderApp-Info.plist"; sourceTree = "<group>"; };
+		DA96771B14809700009AD747 /* EncoderApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EncoderApp-Info.plist"; sourceTree = "<group>"; };
 		DA96771D14809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA96771F14809700009AD747 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA96772114809700009AD747 /* EncoderApp-Prefix.pch */ = {isa = PBXFileReference; path = "EncoderApp-Prefix.pch"; sourceTree = "<group>"; };
+		DA96772114809700009AD747 /* EncoderApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EncoderApp-Prefix.pch"; sourceTree = "<group>"; };
 		DA96772314809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		DA96772514809700009AD747 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA96772514809700009AD747 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA96772614809700009AD747 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA96772914809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DA96773014809700009AD747 /* EncoderAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EncoderAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA96773114809700009AD747 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DA96773814809700009AD747 /* EncoderAppTests-Info.plist */ = {isa = PBXFileReference; path = "EncoderAppTests-Info.plist"; sourceTree = "<group>"; };
+		DA96773814809700009AD747 /* EncoderAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EncoderAppTests-Info.plist"; sourceTree = "<group>"; };
 		DA96773A14809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DA96773C14809700009AD747 /* EncoderAppTests.h */ = {isa = PBXFileReference; path = EncoderAppTests.h; sourceTree = "<group>"; };
+		DA96773C14809700009AD747 /* EncoderAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncoderAppTests.h; sourceTree = "<group>"; };
 		DA96773D14809700009AD747 /* EncoderAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncoderAppTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

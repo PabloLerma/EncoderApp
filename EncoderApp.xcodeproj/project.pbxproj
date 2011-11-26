@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA96771414809700009AD747 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA96771314809700009AD747 /* Cocoa.framework */; };
+		DA96771E14809700009AD747 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA96771C14809700009AD747 /* InfoPlist.strings */; };
+		DA96772014809700009AD747 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA96771F14809700009AD747 /* main.m */; };
+		DA96772414809700009AD747 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DA96772214809700009AD747 /* Credits.rtf */; };
+		DA96772714809700009AD747 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA96772614809700009AD747 /* AppDelegate.m */; };
+		DA96772A14809700009AD747 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA96772814809700009AD747 /* MainMenu.xib */; };
+		DA96773214809700009AD747 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA96773114809700009AD747 /* SenTestingKit.framework */; };
+		DA96773314809700009AD747 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA96771314809700009AD747 /* Cocoa.framework */; };
+		DA96773B14809700009AD747 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA96773914809700009AD747 /* InfoPlist.strings */; };
+		DA96773E14809700009AD747 /* EncoderAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA96773D14809700009AD747 /* EncoderAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA96773414809700009AD747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA96770614809700009AD747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA96770E14809700009AD747;
+			remoteInfo = EncoderApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA96770F14809700009AD747 /* EncoderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncoderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA96771314809700009AD747 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DA96771614809700009AD747 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DA96771714809700009AD747 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DA96771814809700009AD747 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA96771B14809700009AD747 /* EncoderApp-Info.plist */ = {isa = PBXFileReference; path = "EncoderApp-Info.plist"; sourceTree = "<group>"; };
+		DA96771D14809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA96771F14809700009AD747 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA96772114809700009AD747 /* EncoderApp-Prefix.pch */ = {isa = PBXFileReference; path = "EncoderApp-Prefix.pch"; sourceTree = "<group>"; };
+		DA96772314809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DA96772514809700009AD747 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA96772614809700009AD747 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA96772914809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DA96773014809700009AD747 /* EncoderAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EncoderAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA96773114809700009AD747 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DA96773814809700009AD747 /* EncoderAppTests-Info.plist */ = {isa = PBXFileReference; path = "EncoderAppTests-Info.plist"; sourceTree = "<group>"; };
+		DA96773A14809700009AD747 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA96773C14809700009AD747 /* EncoderAppTests.h */ = {isa = PBXFileReference; path = EncoderAppTests.h; sourceTree = "<group>"; };
+		DA96773D14809700009AD747 /* EncoderAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncoderAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA96770C14809700009AD747 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA96771414809700009AD747 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA96772C14809700009AD747 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA96773214809700009AD747 /* SenTestingKit.framework in Frameworks */,
+				DA96773314809700009AD747 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA96770414809700009AD747 = {
+			isa = PBXGroup;
+			children = (
+				DA96771914809700009AD747 /* EncoderApp */,
+				DA96773614809700009AD747 /* EncoderAppTests */,
+				DA96771214809700009AD747 /* Frameworks */,
+				DA96771014809700009AD747 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA96771014809700009AD747 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA96770F14809700009AD747 /* EncoderApp.app */,
+				DA96773014809700009AD747 /* EncoderAppTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA96771214809700009AD747 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA96771314809700009AD747 /* Cocoa.framework */,
+				DA96773114809700009AD747 /* SenTestingKit.framework */,
+				DA96771514809700009AD747 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA96771514809700009AD747 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA96771614809700009AD747 /* AppKit.framework */,
+				DA96771714809700009AD747 /* CoreData.framework */,
+				DA96771814809700009AD747 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DA96771914809700009AD747 /* EncoderApp */ = {
+			isa = PBXGroup;
+			children = (
+				DA96772514809700009AD747 /* AppDelegate.h */,
+				DA96772614809700009AD747 /* AppDelegate.m */,
+				DA96772814809700009AD747 /* MainMenu.xib */,
+				DA96771A14809700009AD747 /* Supporting Files */,
+			);
+			path = EncoderApp;
+			sourceTree = "<group>";
+		};
+		DA96771A14809700009AD747 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA96771B14809700009AD747 /* EncoderApp-Info.plist */,
+				DA96771C14809700009AD747 /* InfoPlist.strings */,
+				DA96771F14809700009AD747 /* main.m */,
+				DA96772114809700009AD747 /* EncoderApp-Prefix.pch */,
+				DA96772214809700009AD747 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA96773614809700009AD747 /* EncoderAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA96773C14809700009AD747 /* EncoderAppTests.h */,
+				DA96773D14809700009AD747 /* EncoderAppTests.m */,
+				DA96773714809700009AD747 /* Supporting Files */,
+			);
+			path = EncoderAppTests;
+			sourceTree = "<group>";
+		};
+		DA96773714809700009AD747 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA96773814809700009AD747 /* EncoderAppTests-Info.plist */,
+				DA96773914809700009AD747 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA96770E14809700009AD747 /* EncoderApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA96774114809700009AD747 /* Build configuration list for PBXNativeTarget "EncoderApp" */;
+			buildPhases = (
+				DA96770B14809700009AD747 /* Sources */,
+				DA96770C14809700009AD747 /* Frameworks */,
+				DA96770D14809700009AD747 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EncoderApp;
+			productName = EncoderApp;
+			productReference = DA96770F14809700009AD747 /* EncoderApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA96772F14809700009AD747 /* EncoderAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA96774414809700009AD747 /* Build configuration list for PBXNativeTarget "EncoderAppTests" */;
+			buildPhases = (
+				DA96772B14809700009AD747 /* Sources */,
+				DA96772C14809700009AD747 /* Frameworks */,
+				DA96772D14809700009AD747 /* Resources */,
+				DA96772E14809700009AD747 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA96773514809700009AD747 /* PBXTargetDependency */,
+			);
+			name = EncoderAppTests;
+			productName = EncoderAppTests;
+			productReference = DA96773014809700009AD747 /* EncoderAppTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA96770614809700009AD747 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DA96770914809700009AD747 /* Build configuration list for PBXProject "EncoderApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA96770414809700009AD747;
+			productRefGroup = DA96771014809700009AD747 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA96770E14809700009AD747 /* EncoderApp */,
+				DA96772F14809700009AD747 /* EncoderAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA96770D14809700009AD747 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA96771E14809700009AD747 /* InfoPlist.strings in Resources */,
+				DA96772414809700009AD747 /* Credits.rtf in Resources */,
+				DA96772A14809700009AD747 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA96772D14809700009AD747 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA96773B14809700009AD747 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA96772E14809700009AD747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA96770B14809700009AD747 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA96772014809700009AD747 /* main.m in Sources */,
+				DA96772714809700009AD747 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA96772B14809700009AD747 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA96773E14809700009AD747 /* EncoderAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA96773514809700009AD747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA96770E14809700009AD747 /* EncoderApp */;
+			targetProxy = DA96773414809700009AD747 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA96771C14809700009AD747 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA96771D14809700009AD747 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DA96772214809700009AD747 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA96772314809700009AD747 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DA96772814809700009AD747 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA96772914809700009AD747 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		DA96773914809700009AD747 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA96773A14809700009AD747 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA96773F14809700009AD747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DA96774014809700009AD747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DA96774214809700009AD747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EncoderApp/EncoderApp-Prefix.pch";
+				INFOPLIST_FILE = "EncoderApp/EncoderApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA96774314809700009AD747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EncoderApp/EncoderApp-Prefix.pch";
+				INFOPLIST_FILE = "EncoderApp/EncoderApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DA96774514809700009AD747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EncoderApp.app/Contents/MacOS/EncoderApp";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EncoderApp/EncoderApp-Prefix.pch";
+				INFOPLIST_FILE = "EncoderAppTests/EncoderAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DA96774614809700009AD747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EncoderApp.app/Contents/MacOS/EncoderApp";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EncoderApp/EncoderApp-Prefix.pch";
+				INFOPLIST_FILE = "EncoderAppTests/EncoderAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA96770914809700009AD747 /* Build configuration list for PBXProject "EncoderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA96773F14809700009AD747 /* Debug */,
+				DA96774014809700009AD747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA96774114809700009AD747 /* Build configuration list for PBXNativeTarget "EncoderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA96774214809700009AD747 /* Debug */,
+				DA96774314809700009AD747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA96774414809700009AD747 /* Build configuration list for PBXNativeTarget "EncoderAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA96774514809700009AD747 /* Debug */,
+				DA96774614809700009AD747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA96770614809700009AD747 /* Project object */;
+}

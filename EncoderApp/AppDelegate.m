@@ -85,13 +85,11 @@
 
 -(IBAction)encode:(id)sender
 {
-    [imageview setImage:nil];
     //[imageview lockFocus];
     NSString *prueba = @"This is a text";
     NSImage *newimg;
     [newimg lockFocus];
-    NSPoint point = NSMakePoint(10, 100);
-    [prueba drawAtPoint:point withAttributes:nil];
+    [prueba drawAtPoint:NSMakePoint(10, 100) withAttributes:nil];
     //[imageview unlockFocus];
     [newimg unlockFocus];
     [imageview setImage:newimg];
@@ -99,7 +97,7 @@
 
 -(IBAction)saveimage:(id)sender
 {
-    
+        [imageview setImage:nil];
 }
 
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1DBD5A14829232002306BC /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1DBD5814829232002306BC /* Quartz.framework */; };
+		DA1DBD5B14829232002306BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1DBD5914829232002306BC /* QuartzCore.framework */; };
+		DA1DBD5E1482B67E002306BC /* template.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA1DBD5C1482B67E002306BC /* template.jpg */; };
+		DA1DBD5F1482B67E002306BC /* template.tif in Resources */ = {isa = PBXBuildFile; fileRef = DA1DBD5D1482B67E002306BC /* template.tif */; };
+		DA1DBD611482B9BE002306BC /* template1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA1DBD601482B9BE002306BC /* template1.jpg */; };
 		DA96771414809700009AD747 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA96771314809700009AD747 /* Cocoa.framework */; };
 		DA96771E14809700009AD747 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA96771C14809700009AD747 /* InfoPlist.strings */; };
 		DA96772014809700009AD747 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA96771F14809700009AD747 /* main.m */; };
@@ -30,6 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA1DBD5814829232002306BC /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		DA1DBD5914829232002306BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DA1DBD5C1482B67E002306BC /* template.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = template.jpg; sourceTree = "<group>"; };
+		DA1DBD5D1482B67E002306BC /* template.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = template.tif; sourceTree = "<group>"; };
+		DA1DBD601482B9BE002306BC /* template1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = template1.jpg; sourceTree = "<group>"; };
 		DA96770F14809700009AD747 /* EncoderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncoderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA96771314809700009AD747 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA96771614809700009AD747 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -57,6 +67,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA96771414809700009AD747 /* Cocoa.framework in Frameworks */,
+				DA1DBD5A14829232002306BC /* Quartz.framework in Frameworks */,
+				DA1DBD5B14829232002306BC /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +87,9 @@
 		DA96770414809700009AD747 = {
 			isa = PBXGroup;
 			children = (
+				DA1DBD601482B9BE002306BC /* template1.jpg */,
+				DA1DBD5C1482B67E002306BC /* template.jpg */,
+				DA1DBD5D1482B67E002306BC /* template.tif */,
 				DA96771914809700009AD747 /* EncoderApp */,
 				DA96773614809700009AD747 /* EncoderAppTests */,
 				DA96771214809700009AD747 /* Frameworks */,
@@ -94,6 +109,8 @@
 		DA96771214809700009AD747 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA1DBD5814829232002306BC /* Quartz.framework */,
+				DA1DBD5914829232002306BC /* QuartzCore.framework */,
 				DA96771314809700009AD747 /* Cocoa.framework */,
 				DA96773114809700009AD747 /* SenTestingKit.framework */,
 				DA96771514809700009AD747 /* Other Frameworks */,
@@ -226,6 +243,9 @@
 				DA96771E14809700009AD747 /* InfoPlist.strings in Resources */,
 				DA96772414809700009AD747 /* Credits.rtf in Resources */,
 				DA96772A14809700009AD747 /* MainMenu.xib in Resources */,
+				DA1DBD5E1482B67E002306BC /* template.jpg in Resources */,
+				DA1DBD5F1482B67E002306BC /* template.tif in Resources */,
+				DA1DBD611482B9BE002306BC /* template1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +455,7 @@
 				DA96774314809700009AD747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA96774414809700009AD747 /* Build configuration list for PBXNativeTarget "EncoderAppTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +464,7 @@
 				DA96774614809700009AD747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -85,14 +85,16 @@
 
 -(IBAction)encode:(id)sender
 {
-    //[imageview lockFocus];
     NSString *prueba = @"This is a text";
-    NSImage *newimg;
+    NSImage *newimg = [[NSImage alloc] initWithSize:NSMakeSize(100, 100)] ;
+    [newimg setBackgroundColor:[NSColor whiteColor]];
     [newimg lockFocus];
-    [prueba drawAtPoint:NSMakePoint(10, 100) withAttributes:nil];
-    //[imageview unlockFocus];
+    [prueba drawAtPoint:NSMakePoint(10, 10) withAttributes:nil];
     [newimg unlockFocus];
     [imageview setImage:newimg];
+    NSError *error = nil;
+    NSData *datos = [newimg TIFFRepresentation];
+    [datos writeToFile:@"/Users/Paul/test.tif" options:NSDataWritingAtomic error:&error];
 }
 
 -(IBAction)saveimage:(id)sender

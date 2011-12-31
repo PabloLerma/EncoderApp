@@ -84,17 +84,101 @@
 }
 
 -(IBAction)encode:(id)sender
-{
+{ 
+    
+    NSString *path = [[NSBundle mainBundle] pathForImageResource:@"template"];
     NSString *prueba = @"This is a text";
-    NSImage *newimg = [[NSImage alloc] initWithSize:NSMakeSize(100, 100)] ;
-    [newimg setBackgroundColor:[NSColor whiteColor]];
+    //NSImage *newimg = [[NSImage alloc] initWithContentsOfFile:path] ;
+        
+    //get the size of the image
+    NSSize imageSize = NSMakeSize(200, 200);
+    
+    //create a non-alpha RGB image rep with the same dimensions as the image
+    NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:imageSize.width pixelsHigh:imageSize.height bitsPerSample:8 samplesPerPixel:3 hasAlpha:NO isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bitmapFormat:NSAlphaNonpremultipliedBitmapFormat bytesPerRow:0 bitsPerPixel:32];
+    
+    //save the current context
+   // NSGraphicsContext* previousContext = [NSGraphicsContext currentContext];
+    
+   // [NSGraphicsContext saveGraphicsState];
+    //lock focus on the bitmap
+    NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithBitmapImageRep:bitmap];
+    [NSGraphicsContext saveGraphicsState];
+    [NSGraphicsContext setCurrentContext:context];
+    
+    //draw the image into the bitmap
+    [prueba drawAtPoint:NSMakePoint(0, 0) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:24], NSFontAttributeName, nil]];
+    /*
+    [newimg drawInRect:NSMakeRect(0, 0 , imageSize.width, imageSize.height)  
+                fromRect:NSZeroRect
+               operation:NSCompositeCopy
+                fraction:1.0
+          respectFlipped:YES
+                   hints:nil];
+    */
+    //restore the previous context
+   // [NSGraphicsContext restoreGraphicsState];
+    //[NSGraphicsContext setCurrentContext:previousContext];
+    [NSGraphicsContext restoreGraphicsState];
+    
+    //get the TIFF data
+    NSData* tiffData = [bitmap TIFFRepresentation];
+    
+    //do something with TIFF data
+
+    NSError *error = nil;
+    [tiffData writeToFile:@"/Users/Paul/test.tif" options:NSDataWritingAtomic error:&error];
+    
+    /*NSBitmapImageRep *rep = [[newimg representations] objectAtIndex: 0];
+    NSSize size = NSMakeSize ([rep pixelsWide], [rep pixelsHigh]);
+    [rep setAlpha:false];
+    [rep setBitsPerSample:300];
+    [rep drawAtPoint:NSMakePoint(0, 160)];
+    */
+    /*
+     [newimg setBackgroundColor:[NSColor redColor]];
     [newimg lockFocus];
-    [prueba drawAtPoint:NSMakePoint(10, 10) withAttributes:nil];
+    [[NSColor redColor] set];
+    */
+     /*
+     [[[NSImage alloc] initWithContentsOfFile:path] compositeToPoint:NSZeroPoint operation:NSCompositeCopy];
+     */
+    /*
+    [prueba drawAtPoint:NSMakePoint(0, 0) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:24], NSFontAttributeName, nil]];
+    [[NSColor redColor] set];
     [newimg unlockFocus];
     [imageview setImage:newimg];
+    NSData *data;
+    data = [newimg TIFFRepresentation];
+    NSError *error = nil;
+    [data writeToFile:@"/Users/Paul/test.tif" options:NSDataWritingAtomic error:&error];
+    */
+    
+    /*
+    NSString *prueba = @"This is a text";
+    NSImageRep *blabla = [[NSImageRep alloc] init];
+    [blabla setAlpha:false];
+    [blabla setSize:NSMakeSize(200, 200)];
+    [blabla setBitsPerSample:300];
+    NSImage *newimg = [[NSImage alloc] initWithSize:NSMakeSize(200, 200)] ;
+    [newimg addRepresentation:blabla];
+    [newimg lockFocus];
+    [[NSColor whiteColor] set];
+    [prueba drawAtPoint:NSMakePoint(0, 160) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:24], NSFontAttributeName, nil]];
+    [newimg unlockFocus];
+    [imageview setImage:newimg];
+    NSBitmapImageRep *rep = [[newimg representations] objectAtIndex: 0];
+    [rep setAlpha:false];
+    [rep setBitsPerSample:300];
     NSError *error = nil;
     NSData *datos = [newimg TIFFRepresentation];
     [datos writeToFile:@"/Users/Paul/test.tif" options:NSDataWritingAtomic error:&error];
+     */
+    
+    /*
+    NSString *path = [[NSBundle mainBundle] pathForImageResource:@"template"];
+    NSImage *newimg = [[NSImage alloc] initWithContentsOfFile:path] ;
+    NSBitmapImageRep *rep = [[newimg representations] objectAtIndex: 0];
+     */
 }
 
 -(IBAction)saveimage:(id)sender

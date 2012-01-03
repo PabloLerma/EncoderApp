@@ -94,18 +94,20 @@
     NSSize imageSize = NSMakeSize(200, 200);
     
     //create a non-alpha RGB image rep with the same dimensions as the image
-    NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:imageSize.width pixelsHigh:imageSize.height bitsPerSample:8 samplesPerPixel:3 hasAlpha:NO isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bitmapFormat:NSAlphaNonpremultipliedBitmapFormat bytesPerRow:0 bitsPerPixel:32];
+    NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:imageSize.width pixelsHigh:imageSize.height bitsPerSample:8 samplesPerPixel:1 hasAlpha:NO isPlanar:NO colorSpaceName:NSCalibratedWhiteColorSpace bitmapFormat:NSAlphaNonpremultipliedBitmapFormat bytesPerRow:0 bitsPerPixel:8];
     
     //save the current context
    // NSGraphicsContext* previousContext = [NSGraphicsContext currentContext];
     
    // [NSGraphicsContext saveGraphicsState];
     //lock focus on the bitmap
-    NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithBitmapImageRep:bitmap];
     [NSGraphicsContext saveGraphicsState];
+    NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithBitmapImageRep:bitmap];
+   // [NSGraphicsContext saveGraphicsState];
     [NSGraphicsContext setCurrentContext:context];
     
     //draw the image into the bitmap
+    [NSColor whiteColor];
     [prueba drawAtPoint:NSMakePoint(0, 0) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:24], NSFontAttributeName, nil]];
     /*
     [newimg drawInRect:NSMakeRect(0, 0 , imageSize.width, imageSize.height)  
@@ -116,13 +118,16 @@
                    hints:nil];
     */
     //restore the previous context
-   // [NSGraphicsContext restoreGraphicsState];
-    //[NSGraphicsContext setCurrentContext:previousContext];
     [NSGraphicsContext restoreGraphicsState];
-    
+    //[NSGraphicsContext setCurrentContext:previousContext];
+   // [NSGraphicsContext restoreGraphicsState];
+
     //get the TIFF data
     NSData* tiffData = [bitmap TIFFRepresentation];
     
+    NSImage *newimg = [[NSImage alloc] initWithData:tiffData];
+    [imageview setImage:newimg];
+
     //do something with TIFF data
 
     NSError *error = nil;

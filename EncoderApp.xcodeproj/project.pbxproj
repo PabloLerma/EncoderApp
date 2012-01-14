@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA1DBD5A14829232002306BC /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1DBD5814829232002306BC /* Quartz.framework */; };
 		DA1DBD5B14829232002306BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1DBD5914829232002306BC /* QuartzCore.framework */; };
+		DA3DAA1C14C1D7E300A77CD7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3DAA1B14C1D7E300A77CD7 /* background.png */; };
 		DA44345414B3C09D009934E1 /* ImageMagick in Resources */ = {isa = PBXBuildFile; fileRef = DA44345314B3C09D009934E1 /* ImageMagick */; };
 		DA8F44801486A842000CD967 /* template.tif in Resources */ = {isa = PBXBuildFile; fileRef = DA8F447F1486A842000CD967 /* template.tif */; };
 		DA96771414809700009AD747 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA96771314809700009AD747 /* Cocoa.framework */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		DA1DBD5814829232002306BC /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		DA1DBD5914829232002306BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DA3DAA1B14C1D7E300A77CD7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		DA44345314B3C09D009934E1 /* ImageMagick */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageMagick; sourceTree = "<group>"; };
 		DA8F447F1486A842000CD967 /* template.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = template.tif; sourceTree = "<group>"; };
 		DA96770F14809700009AD747 /* EncoderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncoderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 		DA96770414809700009AD747 = {
 			isa = PBXGroup;
 			children = (
+				DA3DAA1B14C1D7E300A77CD7 /* background.png */,
 				DA8F447F1486A842000CD967 /* template.tif */,
 				DA96771914809700009AD747 /* EncoderApp */,
 				DA96773614809700009AD747 /* EncoderAppTests */,
@@ -242,6 +245,7 @@
 				DA96772A14809700009AD747 /* MainMenu.xib in Resources */,
 				DA8F44801486A842000CD967 /* template.tif in Resources */,
 				DA44345414B3C09D009934E1 /* ImageMagick in Resources */,
+				DA3DAA1C14C1D7E300A77CD7 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

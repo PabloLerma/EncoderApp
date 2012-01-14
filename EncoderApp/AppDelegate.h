@@ -16,6 +16,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSView *myView;
 @property (retain, nonatomic) IBOutlet NSTextField *url;
 @property (retain, nonatomic) IBOutlet NSTextField *shorturl;
 @property (retain, nonatomic) IBOutlet NSImageView *imageview;

@@ -11,12 +11,16 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize url,shorturl,imageview,receivedData;
+@synthesize url,shorturl,imageview,receivedData,myView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    [_window setBackgroundColor:[NSColor lightGrayColor]];
+    //[_window setBackgroundColor:[NSColor lightGrayColor]];
+    NSImage *background = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForImageResource:@"background.png"]];
+    [myView lockFocus];
+    [background drawInRect:NSMakeRect(0, 0, 500, 435) fromRect:NSMakeRect(0, 0, 500, 435) operation:NSCompositeCopy fraction:1.0];
+    [myView unlockFocus];
 }
 
 -(IBAction)shorturl:(id)sender
@@ -204,8 +208,9 @@
     CGImageRef myImage = CGBitmapContextCreateImage (newcontext);
     
     //NSSize imageViewSize = [imageview intrinsicContentSize];
-    CGImageRef cropImage = CGImageCreateWithImageInRect(myImage, CGRectMake(0, 0, 100, 100));
-    NSImage *codePreview = [[NSImage alloc] initWithCGImage:cropImage size:imageSize];
+    CGImageRef cropImage = CGImageCreateWithImageInRect(myImage, CGRectMake(0, 0, 115, 152));
+    NSSize imagePreviewSize = NSMakeSize(200, 200);
+    NSImage *codePreview = [[NSImage alloc] initWithCGImage:cropImage size:imagePreviewSize];
     [imageview setImage:codePreview];
     
     NSBitmapImageRep *myrep = [[NSBitmapImageRep alloc] initWithCGImage:myImage];

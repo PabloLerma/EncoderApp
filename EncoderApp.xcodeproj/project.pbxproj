@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA1DBD5A14829232002306BC /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1DBD5814829232002306BC /* Quartz.framework */; };
 		DA1DBD5B14829232002306BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1DBD5914829232002306BC /* QuartzCore.framework */; };
+		DA44345414B3C09D009934E1 /* ImageMagick in Resources */ = {isa = PBXBuildFile; fileRef = DA44345314B3C09D009934E1 /* ImageMagick */; };
 		DA8F44801486A842000CD967 /* template.tif in Resources */ = {isa = PBXBuildFile; fileRef = DA8F447F1486A842000CD967 /* template.tif */; };
 		DA96771414809700009AD747 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA96771314809700009AD747 /* Cocoa.framework */; };
 		DA96771E14809700009AD747 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA96771C14809700009AD747 /* InfoPlist.strings */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		DA1DBD5814829232002306BC /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		DA1DBD5914829232002306BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DA44345314B3C09D009934E1 /* ImageMagick */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageMagick; sourceTree = "<group>"; };
 		DA8F447F1486A842000CD967 /* template.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = template.tif; sourceTree = "<group>"; };
 		DA96770F14809700009AD747 /* EncoderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncoderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA96771314809700009AD747 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -136,6 +138,7 @@
 		DA96771A14809700009AD747 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA44345314B3C09D009934E1 /* ImageMagick */,
 				DA96771B14809700009AD747 /* EncoderApp-Info.plist */,
 				DA96771C14809700009AD747 /* InfoPlist.strings */,
 				DA96771F14809700009AD747 /* main.m */,
@@ -238,6 +241,7 @@
 				DA96772414809700009AD747 /* Credits.rtf in Resources */,
 				DA96772A14809700009AD747 /* MainMenu.xib in Resources */,
 				DA8F44801486A842000CD967 /* template.tif in Resources */,
+				DA44345414B3C09D009934E1 /* ImageMagick in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

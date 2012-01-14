@@ -86,104 +86,140 @@
 -(IBAction)encode:(id)sender
 { 
     
-    NSString *path = [[NSBundle mainBundle] pathForImageResource:@"template"];
-    NSString *prueba = @"This is a text";
+    //NSString *path = [[NSBundle mainBundle] pathForImageResource:@"template"];
+    //NSString *prueba = @"This is a text";
     //NSImage *newimg = [[NSImage alloc] initWithContentsOfFile:path] ;
         
     //get the size of the image
-    NSSize imageSize = NSMakeSize(200, 200);
+    NSSize imageSize = NSMakeSize(640.0, 250.0);
     
-    //create a non-alpha RGB image rep with the same dimensions as the image
-    NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:imageSize.width pixelsHigh:imageSize.height bitsPerSample:8 samplesPerPixel:1 hasAlpha:NO isPlanar:NO colorSpaceName:NSCalibratedWhiteColorSpace bitmapFormat:NSAlphaNonpremultipliedBitmapFormat bytesPerRow:0 bitsPerPixel:8];
     
-    //save the current context
-   // NSGraphicsContext* previousContext = [NSGraphicsContext currentContext];
+    CGColorSpaceRef colorSpace;
+    colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
+    int             bitmapByteCount;
+    int             bitmapBytesPerRow;
+    CGFloat pixelsWidth = imageSize.width;
+    CGFloat pixelsHigh = imageSize.height;
     
-   // [NSGraphicsContext saveGraphicsState];
-    //lock focus on the bitmap
-    [NSGraphicsContext saveGraphicsState];
-    NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithBitmapImageRep:bitmap];
-   // [NSGraphicsContext saveGraphicsState];
-    [NSGraphicsContext setCurrentContext:context];
+    bitmapBytesPerRow   = (pixelsWidth * 4);// 1
+    bitmapByteCount     = (bitmapBytesPerRow * pixelsHigh);
+    void *          bitmapData;
+    bitmapData = malloc( bitmapByteCount );
+    if (bitmapData == NULL)
+    {
+        fprintf (stderr, "Memory not allocated!");
+    }
+    CGContextRef newcontext = CGBitmapContextCreate (bitmapData,// 4
+                                                      pixelsWidth,
+                                                      pixelsHigh,
+                                                      8,      // bits per component
+                                                      bitmapBytesPerRow,
+                                                      colorSpace,
+                                                      kCGImageAlphaNoneSkipLast);
     
-    //draw the image into the bitmap
-    [NSColor whiteColor];
-    [prueba drawAtPoint:NSMakePoint(0, 0) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:24], NSFontAttributeName, nil]];
-    /*
-    [newimg drawInRect:NSMakeRect(0, 0 , imageSize.width, imageSize.height)  
-                fromRect:NSZeroRect
-               operation:NSCompositeCopy
-                fraction:1.0
-          respectFlipped:YES
-                   hints:nil];
-    */
-    //restore the previous context
-    [NSGraphicsContext restoreGraphicsState];
-    //[NSGraphicsContext setCurrentContext:previousContext];
-   // [NSGraphicsContext restoreGraphicsState];
+    if (newcontext== NULL)
+    {
+        free (bitmapData);// 5
+        fprintf (stderr, "Context not created!");
+    }
+    
+    // Anti-aliasing
+    CGContextSetAllowsAntialiasing(newcontext, TRUE);
+    
+    CGColorSpaceRelease( colorSpace );
+    
+    //CGContextSetTextMatrix(newcontext, CGAffineTransformIdentity);  // 2
+    //CGContextTranslateCTM(newcontext, 0, pixelsHigh);  // 3
+    //CGContextScaleCTM(newcontext, 1.0, -1.0);
+    
+    CGContextSetGrayFillColor(newcontext, 1.0, 1.0);
+    CGContextFillRect(newcontext, CGRectMake (0, 0, pixelsWidth, pixelsHigh ));
 
-    //get the TIFF data
-    NSData* tiffData = [bitmap TIFFRepresentation];
     
-    NSImage *newimg = [[NSImage alloc] initWithData:tiffData];
-    [imageview setImage:newimg];
+    // Prepare font
+    CTFontRef font = CTFontCreateWithName(CFSTR("LucidaSansUnicode"), 16, NULL);
+    
+    // Create Path
+    CGMutablePathRef gpath = CGPathCreateMutable(); //5
+    CGPathAddRect(gpath, NULL, CGRectMake(10, 0, pixelsWidth, pixelsHigh)); // 6
+    
+    //CGContextSetCharacterSpacing (newcontext, 10); // 4
+    CGContextSetTextDrawingMode (newcontext, kCGTextFill); 
+    CGContextSetGrayFillColor(newcontext, 0.0, 1.0);
 
-    //do something with TIFF data
+    // Create an attributed string
+    CFStringRef keys[] = { kCTFontAttributeName };
+    CFTypeRef values[] = { font };
+    CFDictionaryRef attr = CFDictionaryCreate(NULL, (const void **)&keys, (const void **)&values,
+                                              sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, CFSTR("◣◤◢◤◣◢◥◤\n◢◣◥◤◢◣◢◥\n◢◤◣◢◥◤◤◣\n◣◥◢◣◤◥◢◣\n◢◤◤◣◢◣◢◥\n◣◥◥◢◣◢◤◣"), attr);
+    NSLog(@"lalal: %@",attrString);
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attrString); // 7
+    //CFIndex start = 0;
+    //CFIndex count = CTTypesetterSuggestLineBreak(framesetter, start, 8.0);
+    CTFrameRef theFrame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, CFAttributedStringGetLength(attrString)), gpath, NULL); // 8
+    
+    //◣◤◢◤◣◢◥◤◢◣◥◤◢◣◢◥◢◤◣◢◥◤◤◣◣◥◢◣◤◥◢◣◢◤◤◣◢◣◢◥◣◥◥◢◣◢◤◣
+    //Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+    /* Testing test
+    ◣◤◢◤◣◢◥◤
+    ◢◣◥◤◢◣◢◥
+    ◢◤◣◢◥◤◤◣
+    ◣◥◢◣◤◥◢◣
+    ◢◤◤◣◢◣◢◥
+    ◣◥◥◢◣◢◤◣
+     */
+    
+    
 
+    //CTLineRef line = CTLineCreateWithAttributedString(attrString);
+    //CGContextSetTextMatrix(newcontext, CGAffineTransformIdentity);  //Use this one when using standard view coordinates
+    //CGContextSetTextMatrix(context, CGAffineTransformMakeScale(1.0, -1.0)); //Use this one if the view's coordinates are flipped
+    
+    
+    
+    // Draw the string
+    CTFrameDraw(theFrame, newcontext);
+    
+    // Clean up... CFRelease...
+    CFRelease(framesetter); //9
+    CFRelease(gpath); //10
+    CFRelease(theFrame); //12
+    CFRelease(attr);
+    //CFRelease(line);
+    CFRelease(attrString);
+    CFRelease(font);
+    
+    
+    
+    
+     //CGContextSelectFont (newcontext, // 3
+     //                    "ArialUnicodeMS",
+      //                   15,
+      //                   kCGEncodingFontSpecific);
+               
+    //CGContextShowTextAtPoint (newcontext, 10, 180, "abcd◣◥◥◤◢◤◤◣", 8); 
+    //CGContextShowTextAtPoint (newcontext, 10, 100, "◥", 1);
+    
+    CGImageRef myImage = CGBitmapContextCreateImage (newcontext);
+    
+    //NSSize imageViewSize = [imageview intrinsicContentSize];
+    CGImageRef cropImage = CGImageCreateWithImageInRect(myImage, CGRectMake(0, 0, 100, 100));
+    NSImage *codePreview = [[NSImage alloc] initWithCGImage:cropImage size:imageSize];
+    [imageview setImage:codePreview];
+    
+    NSBitmapImageRep *myrep = [[NSBitmapImageRep alloc] initWithCGImage:myImage];
+    
+    NSData *tiffData = [myrep TIFFRepresentation];
     NSError *error = nil;
+
     [tiffData writeToFile:@"/Users/Paul/test.tif" options:NSDataWritingAtomic error:&error];
-    
-    /*NSBitmapImageRep *rep = [[newimg representations] objectAtIndex: 0];
-    NSSize size = NSMakeSize ([rep pixelsWide], [rep pixelsHigh]);
-    [rep setAlpha:false];
-    [rep setBitsPerSample:300];
-    [rep drawAtPoint:NSMakePoint(0, 160)];
-    */
-    /*
-     [newimg setBackgroundColor:[NSColor redColor]];
-    [newimg lockFocus];
-    [[NSColor redColor] set];
-    */
-     /*
-     [[[NSImage alloc] initWithContentsOfFile:path] compositeToPoint:NSZeroPoint operation:NSCompositeCopy];
-     */
-    /*
-    [prueba drawAtPoint:NSMakePoint(0, 0) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:24], NSFontAttributeName, nil]];
-    [[NSColor redColor] set];
-    [newimg unlockFocus];
-    [imageview setImage:newimg];
-    NSData *data;
-    data = [newimg TIFFRepresentation];
-    NSError *error = nil;
-    [data writeToFile:@"/Users/Paul/test.tif" options:NSDataWritingAtomic error:&error];
-    */
-    
-    /*
-    NSString *prueba = @"This is a text";
-    NSImageRep *blabla = [[NSImageRep alloc] init];
-    [blabla setAlpha:false];
-    [blabla setSize:NSMakeSize(200, 200)];
-    [blabla setBitsPerSample:300];
-    NSImage *newimg = [[NSImage alloc] initWithSize:NSMakeSize(200, 200)] ;
-    [newimg addRepresentation:blabla];
-    [newimg lockFocus];
-    [[NSColor whiteColor] set];
-    [prueba drawAtPoint:NSMakePoint(0, 160) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:24], NSFontAttributeName, nil]];
-    [newimg unlockFocus];
-    [imageview setImage:newimg];
-    NSBitmapImageRep *rep = [[newimg representations] objectAtIndex: 0];
-    [rep setAlpha:false];
-    [rep setBitsPerSample:300];
-    NSError *error = nil;
-    NSData *datos = [newimg TIFFRepresentation];
-    [datos writeToFile:@"/Users/Paul/test.tif" options:NSDataWritingAtomic error:&error];
-     */
-    
-    /*
-    NSString *path = [[NSBundle mainBundle] pathForImageResource:@"template"];
-    NSImage *newimg = [[NSImage alloc] initWithContentsOfFile:path] ;
-    NSBitmapImageRep *rep = [[newimg representations] objectAtIndex: 0];
-     */
+
+    //CGContextDrawImage(myContext, myBoundingBox, myImage);
+    char *newbitmapData = CGBitmapContextGetData(newcontext);
+    CGContextRelease (newcontext);
+    if (newbitmapData) free(newbitmapData);
+    CGImageRelease(myImage);
 }
 
 -(IBAction)saveimage:(id)sender
